@@ -102,7 +102,7 @@
 </template>
 
 <script>
-    //TODO: 1、优化滚动高度；2、优化表格边框样式；3、
+    //TODO: 1、优化滚动高度；2、优化表格边框样式；3、行内样式单位转换
     import BScroll from 'better-scroll'
 
     export default {
