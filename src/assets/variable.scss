@@ -1,0 +1,20 @@
+// 基准移动端宽度
+$baseDevice: 750;
+// 前端切图移动端默认正常显示尺寸，默认为设计稿的一半
+$device: $baseDevice / 2;
+// 默认html font-size
+$baseFontSize: 100px;
+$mainColor: #d8aa54 !default;
+// scss function
+@function calc-percent($target, $context) {
+    @return $target/$context * 100%;
+}
+@function px2rem($px, $base-font-size: $baseDevice / $device * $baseFontSize) {
+    @if (unitless($px)) {
+        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+        @return px2rem($px + 0px); // That may fail.
+    } @else if (unit($px)==rem) {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1rem;
+}
